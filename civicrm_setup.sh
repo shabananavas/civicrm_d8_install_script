@@ -78,7 +78,7 @@ main() (
   fi
 
 
-  echo "Setting up composer configurations..."
+  echo "***Setting up composer configurations...***"
     # Add our github authentication token.
     composer config github-oauth.github.com "${GITHUB_TOKEN}"
     # Repo Configuration.
@@ -99,14 +99,14 @@ main() (
     }'
     composer config repositories.zetacomponents-mail vcs https://github.com/civicrm/zetacomponents-mail.git
     composer config repositories.topsort vcs https://github.com/totten/topsort.php.git
-  echo "Downloading modules and dependencies..."
+  echo "***Downloading modules and dependencies...***"
     composer require 'phpoffice/PHPWord:dev-zend-version as 0.13.0'
     composer require "civicrm/civicrm-core:dev-roundearth-$CIVICRM_VERSION as $CIVICRM_VERSION"
     composer require drupal/civicrm-drupal:dev-roundearth
     # Install dependencies.
     cd vendor/civicrm/civicrm-core
     bower install --allow-root
-  echo "Downloading the latest CiviCRM Drupal package to copy necessary files..."
+  echo "***Downloading the latest CiviCRM Drupal package to copy necessary files...***"
     # Download CiviCRM Drupal.
     cd ../../../
     wget -O /tmp/civicrm.tar.gz https://download.civicrm.org/civicrm-$CIVICRM_VERSION-drupal.tar.gz
@@ -120,14 +120,14 @@ main() (
     cp /tmp/civicrm/install/langs.php vendor/civicrm/civicrm-core/install/
     cp /tmp/civicrm/./templates/CRM/common/version.tpl vendor/civicrm/civicrm-core/templates/CRM/common/
     rm -rf /tmp/civicrm.tar.gz /tmp/civicrm
-  echo "Symlinking vendor directory..."
+  echo "***Symlinking vendor directory...***"
     # Symlink Vendor.
     cd "${DOC_ROOT}"
     ln -s ../vendor
     chmod 0775 sites/default
     cd ../
-  echo "All CiviCRM modules and dependencies have been successfully downloaded."
-  echo "Refer to https://github.com/shabananavas/civicrm_d8_install_script (Steps 3-5) for instructions on enabling CiviCRM and completing the installation."
+  echo "***All CiviCRM modules and dependencies have been successfully downloaded.***"
+  echo "***Refer to https://github.com/shabananavas/civicrm_d8_install_script (Steps 3-5) for instructions on enabling CiviCRM and completing the installation.***"
 )
 
 source ./.env
