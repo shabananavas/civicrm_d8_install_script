@@ -11,7 +11,7 @@ This project contains a script which automatically downloads all the necessary m
 ## Important Notes
 - Ensure that your ‘Vendor’ directory is outside of your document root. So your directory structure would be like this:
 
-      **your_d8_site_directory*
+      **your_d8_site_directory**
       └── composer.json
       └── composer.lock
       └── vendor
