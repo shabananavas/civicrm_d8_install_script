@@ -10,16 +10,17 @@ This project contains a script which automatically downloads all the necessary m
 
 ## Important Notes
 - Ensure that your ‘Vendor’ directory is outside of your document root. So your directory structure would be like this:
+
       **your_d8_site_directory** <br>
-      ├── composer.json<br>
-      ├── composer.lock<br>
-      ├── vendor<br>
+      └── composer.json<br>
+      └── composer.lock<br>
+      └── vendor<br>
       └── web (your document root)<br>
 - Create a backup of your database.
 
 ## Installation
 1. Copy the `.env`, `civicrm_setup.sh` files to the root of your project.
-2. Run `civicrm_setup.sh` from the project root directory **`bash ./civicrm_setup.sh`**
+2. Run `civicrm_setup.sh` from the project root directory <span style="color:red">**`bash ./civicrm_setup.sh`**</span>
 
 ## `.env` file
 This file contains variables necessary for `civicrm_setup.sh` such as the CiviCRM version, doc root, etc.
