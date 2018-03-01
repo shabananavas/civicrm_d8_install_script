@@ -27,7 +27,9 @@ This project contains a script which automatically downloads all the necessary m
   - This will also create all the necessary tables in your Drupal database.
 4. Logout of Drupal and log back in again.
   - This is needed to sync your logged-in account with CiviCRM contacts.
-5. Get the Civi theme to apply by going to /civicrm/admin/setting/url?reset=1 and set the CiviCRM Resource URL to/vendor/civicrm/civicrm-core and click “Save”.
+5. Get the Civi theme to apply by going to /civicrm/admin/setting/url?reset=1 and set the CiviCRM Resource URL to /vendor/civicrm/civicrm-core and click “Save”.
+
+And you are done!
 
 ## `.env` file
 This file contains variables necessary for `civicrm_setup.sh` such as the CiviCRM version, doc root, etc.
