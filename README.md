@@ -22,6 +22,12 @@ This project contains a script which automatically downloads all the necessary m
 ## Installation
 1. Copy the `.env`, `civicrm_setup.sh` files to the root of your project.
 2. Run `civicrm_setup.sh` from the project root directory **`bash ./civicrm_setup.sh`**
+3. Now, go to the "Extend" page (at /admin/modules) and install the CiviCRM module.
+  - This will create a civicrm.settings.php in your /sites/default directory which contains information about where the database is, etc.
+  - This will also create all the necessary tables in your Drupal database.
+4. Logout of Drupal and log back in again.
+  - This is needed to sync your logged-in account with CiviCRM contacts.
+5. Get the Civi theme to apply by going to /civicrm/admin/setting/url?reset=1 and set the CiviCRM Resource URL to/vendor/civicrm/civicrm-core and click “Save”.
 
 ## `.env` file
 This file contains variables necessary for `civicrm_setup.sh` such as the CiviCRM version, doc root, etc.
