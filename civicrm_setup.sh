@@ -129,6 +129,7 @@ main() (
     rm -rf $asset_dest/tests
     cp -r $asset_source/extern $asset_dest/
     cp $asset_source/civicrm.config.php $asset_dest/
+    cd "${DOC_ROOT}"
     chmod 0775 sites/default
     cd ../
   echo "***All CiviCRM modules and dependencies have been successfully downloaded.***"
