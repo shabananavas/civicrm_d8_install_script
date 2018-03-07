@@ -122,7 +122,6 @@ main() (
     rm -rf /tmp/civicrm.tar.gz /tmp/civicrm
   echo "***Copying assets...***"
     # Copy CiviCRM assets.
-    cd "${DOC_ROOT}"
     asset_source=./vendor/civicrm/civicrm-core
     asset_dest=./web/libraries/civicrm
     mkdir -p $asset_dest
@@ -130,11 +129,6 @@ main() (
     rm -rf $asset_dest/tests
     cp -r $asset_source/extern $asset_dest/
     cp $asset_source/civicrm.config.php $asset_dest/
-    cat << EOF > $asset_dest/settings_location.php
-      <?php
-
-      define('CIVICRM_CONFDIR', '../../../sites');
-      EOF
     chmod 0775 sites/default
     cd ../
   echo "***All CiviCRM modules and dependencies have been successfully downloaded.***"
